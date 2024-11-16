@@ -23,4 +23,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ToDoList.API\ToDoList.API.csproj" />
+  </ItemGroup>
+
 </Project>
