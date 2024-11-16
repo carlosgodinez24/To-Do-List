@@ -6,26 +6,35 @@
     <span>{{ isEditMode ? 'Edit Task' : 'New Task' }}</span>
   </mat-toolbar>
 
-  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
-    <mat-form-field appearance="fill" class="full-width">
-      <mat-label>Title</mat-label>
-      <input matInput formControlName="title" required />
-    </mat-form-field>
+  <!-- Add container here -->
+  <div class="container">
+    <mat-card>
+      <mat-card-content>
+        <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title" required />
+          </mat-form-field>
 
-    <mat-form-field appearance="fill" class="full-width">
-      <mat-label>Description</mat-label>
-      <textarea matInput formControlName="description"></textarea>
-    </mat-form-field>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+          </mat-form-field>
 
-    <mat-form-field appearance="fill" class="full-width">
-      <mat-label>Due Date</mat-label>
-      <input matInput [matDatepicker]="picker" formControlName="dueDate" />
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Due Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dueDate" />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
 
-    <button mat-raised-button color="primary" type="submit">
-      {{ isEditMode ? 'Update' : 'Create' }}
-    </button>
-  </form>
+          <div class="actions">
+            <button mat-raised-button color="primary" type="submit">
+              {{ isEditMode ? 'Update' : 'Create' }}
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>

@@ -6,14 +6,17 @@
     <span>Task Details</span>
   </mat-toolbar>
 
-  <mat-card *ngIf="task">
-    <mat-card-title>{{ task.title }}</mat-card-title>
-    <mat-card-content>
-      <p><strong>Description:</strong> {{ task.description }}</p>
-      <p><strong>Due Date:</strong> {{ task.dueDate | date }}</p>
-      <p>
-        <strong>Status:</strong> {{ task.isCompleted ? 'Completed' : 'Pending' }}
-      </p>
-    </mat-card-content>
-  </mat-card>
+  <!-- Add container here -->
+  <div class="container">
+    <mat-card>
+      <mat-card-title>{{ task.title }}</mat-card-title>
+      <mat-card-content>
+        <p><strong>Description:</strong> {{ task.description }}</p>
+        <p><strong>Due Date:</strong> {{ task.dueDate | date }}</p>
+        <p>
+          <strong>Status:</strong> {{ task.isCompleted ? 'Completed' : 'Pending' }}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>

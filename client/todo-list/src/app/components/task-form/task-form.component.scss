@@ -1,8 +1,47 @@
 .task-form-container {
-    margin: 20px;
+    .container {
+      max-width: 600px; /* Adjust as needed */
+      margin: 40px auto; /* Centers the container and adds vertical spacing */
+      padding: 20px;
+    }
+  
+    mat-card {
+      padding: 20px;
+  
+      mat-card-content {
+        padding: 0;
+      }
+    }
   
     .full-width {
       width: 100%;
+    }
+  
+    .actions {
+      margin-top: 20px;
+      text-align: center;
+  
+      button {
+        width: 100%;
+        max-width: 200px;
+      }
+    }
+  
+    mat-toolbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+    }
+  
+    .mat-toolbar.mat-primary {
+      background: #3f51b5; /* Ensure consistent color */
+    }
+  
+    /* Adjust content to not hide behind the toolbar */
+    .container {
+      margin-top: 80px; /* Adjust based on toolbar height */
     }
   }
   

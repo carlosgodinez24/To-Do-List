@@ -4,17 +4,28 @@
     background-size: cover;
     height: 200px;
     position: relative;
-
+    overflow: hidden;
+    
     h1 {
-      position: absolute;
-      bottom: 10px;
-      left: 20px;
-      color: white;
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+        color: white;
+        font-size: 2rem;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
     }
+  }
+      
+
+  .container {
+    max-width: 800px; /* Adjust the width as needed */
+    margin: 0 auto;    /* Centers the container */
+    padding: 20px;     /* Adds padding around the content */
   }
 
   .actions {
-    margin: 20px;
+    margin: 20px 0;
+    text-align: center; /* Centers the Add Task button */
   }
 
   .spacer {
@@ -23,10 +34,38 @@
 
   .task-title {
     cursor: pointer;
+    flex-grow: 1; /* Allows the title to take up available space */
+    margin-left: 10px; /* Adds spacing between the checkbox and title */
   }
 
   .completed {
     text-decoration: line-through;
     color: gray;
+  }
+
+  .task-list {
+    border: 1px solid #ccc;       /* Adds border around the task list */
+    border-radius: 8px;           /* Rounds the corners */
+    background-color: #fafafa;    /* Light background color */
+    padding: 0;                   /* Removes default padding */
+  }
+
+  mat-list-item {
+    border-bottom: 1px solid #eee; /* Adds border between items */
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;            /* Adds padding inside each item */
+
+    &:last-child {
+      border-bottom: none;        /* Removes border from the last item */
+    }
+
+    .mat-checkbox {
+      margin-right: 10px;
+    }
+
+    button {
+      margin-left: 5px;
+    }
   }
 }

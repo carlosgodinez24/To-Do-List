@@ -1,3 +1,35 @@
 .task-details-container {
-  margin: 20px;
+  .container {
+    max-width: 600px; /* Adjust as needed */
+    margin: 80px auto 20px auto; /* Centers the container and adds spacing */
+    padding: 20px;
+  }
+
+  mat-card {
+    padding: 20px;
+
+    mat-card-title {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    mat-card-content {
+      p {
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+      }
+
+      strong {
+        font-weight: 600;
+      }
+    }
+  }
+
+  mat-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
 }
