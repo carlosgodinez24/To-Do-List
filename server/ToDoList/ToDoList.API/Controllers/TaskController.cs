@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ToDoList.API.Models;
+using ToDoList.API.Models.DTO;
 using ToDoList.API.Repositories;
 
 namespace ToDoList.API.Controllers
@@ -58,6 +58,20 @@ namespace ToDoList.API.Controllers
             return Ok(tasks);
         }
 
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetTaskById(Guid id)
+        {
+            var userId = GetUserId();
+            var task = await _taskRepository.FindAsync(t => t.TaskId == id && t.UserId == userId);
+
+            var taskItem = task.FirstOrDefault();
+
+            if (taskItem == null)
+                return NotFound();
+
+            return Ok(taskItem);
+        }
+
         /// <summary>
         /// Update Task
         /// </summary>
@@ -95,7 +109,7 @@ namespace ToDoList.API.Controllers
         /// <param name="isCompleted"></param>
         /// <returns></returns>
         [HttpPatch("{id}/status")]
-        public async Task<IActionResult> UpdateTaskStatus(Guid id, [FromBody] bool isCompleted)
+        public async Task<IActionResult> UpdateTaskStatus(Guid id, [FromBody] TaskStatusDto taskStatusDto)
         {
             var userId = GetUserId();
             var task = await _taskRepository.GetByIdAsync(id);
@@ -103,7 +117,7 @@ namespace ToDoList.API.Controllers
             if (task == null || task.UserId != userId)
                 return NotFound();
 
-            task.IsCompleted = isCompleted;
+            task.IsCompleted = taskStatusDto.IsCompleted;
             _taskRepository.Update(task);
             await _taskRepository.SaveChangesAsync();
 
