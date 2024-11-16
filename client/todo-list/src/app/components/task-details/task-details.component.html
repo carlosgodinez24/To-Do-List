@@ -1,0 +1,19 @@
+<div class="task-details-container">
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span>Task Details</span>
+  </mat-toolbar>
+
+  <mat-card *ngIf="task">
+    <mat-card-title>{{ task.title }}</mat-card-title>
+    <mat-card-content>
+      <p><strong>Description:</strong> {{ task.description }}</p>
+      <p><strong>Due Date:</strong> {{ task.dueDate | date }}</p>
+      <p>
+        <strong>Status:</strong> {{ task.isCompleted ? 'Completed' : 'Pending' }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

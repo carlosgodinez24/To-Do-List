@@ -1,0 +1,40 @@
+<div class="task-list-container">
+  <mat-toolbar color="primary">
+    <span>To-Do List</span>
+    <span class="spacer"></span>
+    <button mat-button (click)="logout()">Logout</button>
+  </mat-toolbar>
+
+  <div class="header-image">
+    <!-- Add your landscape background image -->
+    <h1>To-Do List</h1>
+  </div>
+
+  <div class="actions">
+    <button mat-raised-button color="primary" (click)="addTask()">
+      Add Task
+    </button>
+  </div>
+
+  <mat-list>
+    <mat-list-item *ngFor="let task of tasks">
+      <mat-checkbox
+        [checked]="task.isCompleted"
+        (change)="toggleCompletion(task)"
+      ></mat-checkbox>
+      <span
+        [class.completed]="task.isCompleted"
+        (click)="viewDetails(task)"
+        class="task-title"
+        >{{ task.title }}</span
+      >
+      <span class="spacer"></span>
+      <button mat-icon-button (click)="editTask(task)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="deleteTask(task)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-list>
+</div>

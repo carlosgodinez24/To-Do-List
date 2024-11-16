@@ -1,0 +1,32 @@
+.task-list-container {
+  .header-image {
+    background: url('/assets/header.jpg') no-repeat center center;
+    background-size: cover;
+    height: 200px;
+    position: relative;
+
+    h1 {
+      position: absolute;
+      bottom: 10px;
+      left: 20px;
+      color: white;
+    }
+  }
+
+  .actions {
+    margin: 20px;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .task-title {
+    cursor: pointer;
+  }
+
+  .completed {
+    text-decoration: line-through;
+    color: gray;
+  }
+}
