@@ -5,32 +5,40 @@ The To-Do List Application is a full-stack project that allows users to manage t
 
 ![image](https://github.com/user-attachments/assets/52408b12-5596-4816-82a2-d56c4e78e4d9)
 
-# To-Do List API
-The ToDoList API is a RESTful service that allows users to manage their personal to-do lists. Users can create, read, update, and delete tasks. Each task is associated with a user, and authentication is required to access task-related endpoints.
-
 ## Features
 
 - **User Authentication:** Secure login using JWT tokens.
 - **Task Management:** Perform CRUD operations on tasks.
 - **Authorization:** Ensure users can only access their own tasks.
+- **Responsive UI:** An intuitive Angular interface that works across devices.
 - **Code-First Migration:** Database schema is created from code models.
 - **Unit Testing:** Test coverage for controllers and services.
 
 ## Tech Stack
-- **Language:** C#
-- **Framework:** .NET 7
-- **Database:** SQL Server
-- **ORM:** Entity Framework Core 7
-- **Authentication:** JWT Bearer Tokens
-- **Testing:** xUnit, Moq
-- **IDE:** Visual Studio 2022 or later
+- **Back-End:**
+  - **Language:** C#
+  - **Framework:** .NET 7
+  - **Database:** SQL Server
+  - **ORM:** Entity Framework Core 7
+  - **Authentication:** JWT Bearer Tokens
+  - **Testing:** xUnit, Moq
+  - **IDE:** Visual Studio 2022 or later
+- **Front-End:**
+  - **Framework:** Angular v16
+  - **Language:** TypeScript
+  - **UI Library:** Angular Material
 
 ## Prerequisites
-- .NET 7 SDK: [Download](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
-- SQL Server: [Download (Express or Developer edition)](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
-- Visual Studio 2022: [Download](https://visualstudio.microsoft.com/downloads/)
-- Git: [Download](https://git-scm.com/downloads)
-- Postman or similar tool for testing API endpoints (optional)
+- **For the API:**
+  - .NET 7 SDK: [Download](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
+  - SQL Server: [Download (Express or Developer edition)](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+  - Visual Studio 2022: [Download](https://visualstudio.microsoft.com/downloads/)
+  - Git: [Download](https://git-scm.com/downloads)
+  - Postman or similar tool for testing API endpoints (optional)
+- **For the Angular App:**
+  - Node.js (version 14 or higher)
+  - npm (comes with Node.js)
+  - Angular CLI v16: : Install globally using `npm install -g @angular/cli@16`
 
 ## Getting Started
 
@@ -38,7 +46,7 @@ The ToDoList API is a RESTful service that allows users to manage their personal
 ```bash
 git clone https://github.com/carlosgodinez24/To-Do-List.git
 ```
-### Configuration
+### API Configuration
 1. Update Connection String
 
 In `appsettings.json`, update the `DefaultConnection` string to match your SQL Server instance:
