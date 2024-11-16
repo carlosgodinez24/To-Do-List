@@ -1,3 +1,10 @@
+# To-Do List Application
+The To-Do List Application is a full-stack project that allows users to manage their personal to-do lists through a web interface. The application consists of a .NET 7 RESTful API backend and an Angular frontend. Users can create, read, update, and delete tasks, with authentication ensuring that each user can access only their own tasks.
+
+![image](https://github.com/user-attachments/assets/4d20c0ba-5c7a-454d-a5ee-5f1db52996b2)
+
+![image](https://github.com/user-attachments/assets/52408b12-5596-4816-82a2-d56c4e78e4d9)
+
 # To-Do List API
 The ToDoList API is a RESTful service that allows users to manage their personal to-do lists. Users can create, read, update, and delete tasks. Each task is associated with a user, and authentication is required to access task-related endpoints.
 
